@@ -89,32 +89,6 @@ export default {
             this.Accion = 'muro';
         },
         MovValido(jugador, fila, columna) {
-
-            const filaDif = Math.abs(jugador.fila - fila);
-            const ColDif = Math.abs(jugador.columna - columna);
-
-            if (filaDif + ColDif !== 1) return false;
-
-            for (const otroJug of this.jugadores) {
-                if (otroJug !== jugador && otroJug.fila === fila && otroJug.columna === columna) {
-                    return false;
-                }
-            }
-
-            if (filaDif === 1) {
-                if (jugador.fila < fila && 
-                this.tablero[jugador.fila][jugador.columna].MuroHori) return false;
-                if (jugador.fila > fila && 
-                this.tablero[fila][columna].MuroHori) return false;
-            }
-
-            if (ColDif === 1) {
-                if (jugador.columna < columna && 
-                this.tablero[jugador.fila][jugador.columna].MuroVert) return false;
-                if (jugador.columna > columna && 
-                this.tablero[fila][columna].MuroVert) return false;
-            }
-
             return fila >= 0 && fila < 9 && columna >= 0 && columna < 9;
         },
 
