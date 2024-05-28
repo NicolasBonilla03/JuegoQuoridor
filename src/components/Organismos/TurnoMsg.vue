@@ -6,6 +6,7 @@
    };
 </script>
 <template>
+    <h1>JUEGO QUORIDOR</h1>
     <div class="msj">{{msg}}</div>
 </template>
 <style>
