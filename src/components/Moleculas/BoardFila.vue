@@ -8,13 +8,13 @@
         },
         components: {Celda},
         methods: {
-            PosJ1(fila, columna) {
-                const J1 = this.jugadores[0];
-                return J1.fila === fila && J1.columna === columna;
+            PosP1(fila, columna) {
+                const P1 = this.jugadores[0];
+                return P1.fila === fila && P1.columna === columna;
             },
-            PosJ2(fila, columna) {
-                const J2 = this.jugadores[1];
-                return J2.fila === fila && J2.columna === columna;
+            PosP2(fila, columna) {
+                const P2 = this.jugadores[1];
+                return P2.fila === fila && P2.columna === columna;
             },
             MnjClickCelda({fila, columna}) {
                 this.$emit('CeldaClick', {fila, columna})
@@ -30,8 +30,8 @@
         :key="celda.columna"
         :fila="celda.fila"
         :columna="celda.columna"
-        :Jugador1="PosJ1(celda.fila, celda.columna)"
-        :Jugador2="PosJ2(celda.fila, celda.columna)"
+        :Jugador1="PosP1(celda.fila, celda.columna)"
+        :Jugador2="PosP2(celda.fila, celda.columna)"
         :MuroHori="celda.MuroHori"
         :MuroVert="celda.MuroVert"
         
