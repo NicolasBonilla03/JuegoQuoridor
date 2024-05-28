@@ -9,6 +9,7 @@ export default{
 
 <template>
     <section class="Ctrls">
+        <button @click="$emit('reiniciar')">Reiniciar</button>
         <button @click="$emit('ActivAccion')">{{ Accion === 'mover' ? 'Cambiar a Poner  Muro' : 'Cambiar a Moverse'}}</button>
         <div v-if="Accion === 'mover'"></div>
         <div v-if="Accion === 'muro'">
