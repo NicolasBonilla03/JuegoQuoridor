@@ -194,7 +194,7 @@ export default {
         MnjPonerMuro(fila, columna) {
             const jugador = this.jugadores[this.JugActual];
             if (jugador.Muros <= 0) {
-                alert('No quedan muros');
+                alert('Te quedaste sun muros jugador '+ (this.JugActual+1));
                 return;
             }
             if (this.MuroValido(fila, columna, this.OrientacionMuro)) {
