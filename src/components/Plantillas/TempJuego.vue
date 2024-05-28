@@ -68,6 +68,16 @@ export default {
                     this.Ganador = jugador.id;
                     this.Turnomsg = `Jugador ${jugador.id} ha ganado!`;
                     alert (`Jugador ${jugador.id} ha ganado!`)
+                    this.tablero = this.IniciarTablero();
+            this.jugadores = [
+                { id: 1, fila: 0, columna: 4, Muros: 10, MetaFila: 8 },
+                { id: 2, fila: 8, columna: 4, Muros: 10, MetaFila: 0 }
+            ];
+            this.JugActual = 0;
+            this.Ganador = null;
+            this.Turnomsg = 'Turno del jugador 1';
+            this.Accion = 'mover';
+            this.OrientacionMuro = 'horizontal';
                 } else {
                     this.cambiarJug();
                 }
@@ -79,17 +89,6 @@ export default {
             this.Accion = 'muro';
         },
         MovValido(jugador, fila, columna) {
-            console.log('MovValido called with:', { jugador, fila, columna });
-
-            if (!this.tablero[jugador.fila] || !this.tablero[jugador.fila][jugador.columna]) {
-            console.error('Invalid position for jugador:', jugador.fila, jugador.columna);
-            return false;
-            }
-
-            if (!this.tablero[fila] || !this.tablero[fila][columna]) {
-                console.error('Invalid target position:', fila, columna);
-                return false;
-            }
 
             const filaDif = Math.abs(jugador.fila - fila);
             const ColDif = Math.abs(jugador.columna - columna);
