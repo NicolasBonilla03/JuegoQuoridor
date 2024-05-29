@@ -9,19 +9,32 @@ export default{
 
 <template>
     <section class="Ctrls">
-        <button @click="$emit('reiniciar')" class="btn">Reiniciar</button>
-        <button @click="$emit('ActivAccion')" class="btn">{{ Accion === 'mover' ? 'Cambiar a Poner  Muro' : 'Cambiar a Moverse'}}</button>
+        <button @click="$emit('reiniciar')" class="btn btn-reinicio">Reiniciar</button>
+        <button @click="$emit('ActivAccion')" class="btn btn-accion">{{ Accion === 'mover' ? 'Cambiar a Poner  Muro' : 'Cambiar a Moverse'}}</button>
         <div v-if="Accion === 'mover'"></div>
         <div v-if="Accion === 'muro'">
-            <p>Selecciona la orientacion del muro:</p>
-            <button @click="$emit('setOrientacionMuro', 'horizontal')" class="btn">Horizontal</button>
-            <button @click="$emit('setOrientacionMuro', 'vertical')" class="btn">Vertical</button>
-            <p>Muros restantes: {{ Muros }}</p>
+            <p class="texto">Selecciona la orientacion del muro:</p>
+            <div class="orien">
+            <button @click="$emit('setOrientacionMuro', 'horizontal')" class="btn btn-hor">Horizontal</button>
+            <button @click="$emit('setOrientacionMuro', 'vertical')" class="btn btn-ver">Vertical</button>
+          </div>
+            <p class="texto texto-muro">Muros restantes: {{ Muros }}</p>
         </div>
     </section>
 </template>
 
 <style scoped>
+.orien{
+border-width: 50px;
+}
+
+.texto{
+  color: white;
+  font-size: larger;
+}
+.texto-muro{
+  text-align: center;
+}
 .Ctrls {
   display: flex;
   flex-direction: column;
@@ -45,6 +58,24 @@ export default{
 .btn:focus,
 .btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.btn-reinicio{
+  color: red;
+}
+
+.btn-accion{
+  color: white;
+}
+
+.btn-hor{
+color: purple;
+}
+
+.btn-ver{
+    color: green;
+    left: 50px;
+    position: relative;
 }
 
 </style>

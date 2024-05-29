@@ -7,15 +7,16 @@
 </script>
 <template>
     <h1 class="titulo">JUEGO QUORIDOR</h1>
-    <div class="msj">{{msg}}</div>
+    <div class="titulo titulo-msg">{{msg}}</div>
 </template>
 <style>
-.msj{
+.titulo-msg{
     margin-bottom: 10px;
     font-size: 1.2em;
 }
 
 .titulo{
+    color: white;
     font-size: 3.2em;
     line-height: 1.1;
 }
